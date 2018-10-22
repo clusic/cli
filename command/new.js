@@ -5,7 +5,6 @@ const inquirer = require('inquirer');
 const catcher = require('../lib/catcher');
 const delay = require('../utils/delay');
 const Addtion = require('../lib/addtion');
-const ChildProcess = require('child_process');
 const questions = {
   project: {
     type: 'input',
@@ -71,7 +70,8 @@ module.exports = (cmd, configs, project) => {
   question.push(questions.socket, questions.port, questions.env, questions.debug, questions.max, questions.framework);
   prompt(question).then(result => catcher(async roll => {
     console.log();
-    const projectDir = result.project ? path.resolve(process.cwd(), result.project) : project;
+    if (!project) project = result.project;
+    const projectDir = path.resolve(process.cwd(), result.project);
     if (fs.existsSync(projectDir)) throw new Error('项目已存在');
     fs.mkdirSync(projectDir); roll(() => fse.removeSync(projectDir));cmd.await('+', '[Dictionary]', projectDir); await delay(100);
     const args = [`--port=${result.port}`];
