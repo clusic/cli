@@ -1,0 +1,18 @@
+const {
+  ControllerService, Controller,
+  Get
+} = require('@clusic/method');
+
+@Controller('/')
+class <%=className%> extends ControllerService {
+  constructor(ctx) {
+    super(ctx);
+  }
+  
+  @Get('/')
+  async welcome() {
+    this.ctx.body = 'Welcome to use Rex';
+  }
+}
+
+module.exports = <%=className%>;

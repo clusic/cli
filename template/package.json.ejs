@@ -1,0 +1,15 @@
+{
+  "name": "<%=name%>",
+  "version": "1.0.0",
+  "description": "The <%=name%> project of rex",
+  "scripts": {
+    "dev": "clusic server dev --env=development <%=args%>",
+    "start": "clusic server start --env=production <%=args%>",
+    "stop": "clusic server stop",
+    "restart": "clusic server restart"
+  },
+  "clusic": {
+    "framework": "<%=framework%>",
+    "agents": []
+  }
+}
