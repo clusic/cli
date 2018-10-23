@@ -29,9 +29,17 @@ module.exports = (cmd, configs, ...args) => {
       }
     }
     
+    if (addtion.addCount || addtion.modifyCount || addtion.removeCount) {
+      return cmd.complete({
+        prefix: '[Make]',
+        message: `OK, files status: [+${addtion.addCount}] [*${addtion.modifyCount}]`,
+        suffix: '(@' + project + ')'
+      });
+    }
+
     cmd.complete({
       prefix: '[Make]',
-      message: `OK, files status: [+${addtion.addCount}] [*${addtion.modifyCount}] [-${addtion.removeCount}]`,
+      message: `OK, nothing changed.`,
       suffix: '(@' + project + ')'
     });
   }).catch(cmd.error);
