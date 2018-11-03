@@ -1,10 +1,11 @@
 const {
-  ControllerService, Controller,
-  Get
+  Get,
+  Controller,
+  ApplicationComponent,
 } = require('@clusic/method');
 
 @Controller('/')
-class <%=className%> extends ControllerService {
+class <%=className%> extends ApplicationComponent {
   constructor(ctx) {
     super(ctx);
   }
