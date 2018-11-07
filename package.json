@@ -1,6 +1,6 @@
 {
   "name": "@clusic/cli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The cli of clusic",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/clusic/cli#readme",
   "dependencies": {
-    "@clusic/cluster": "^1.0.4",
+    "@clusic/cluster": "^1.0.5",
     "@clusic/utils": "^1.0.0",
     "array-uniq": "^2.0.0",
     "ejs": "^2.6.1",
